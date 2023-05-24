@@ -37,8 +37,10 @@ class CartScreen extends StatelessWidget {
                     label: Text(
                       '\$${cartData.totalAmount.toStringAsFixed(2)}',
                       style: TextStyle(
-                        color:
-                            Theme.of(context).primaryTextTheme.headline6.color,
+                        color: Theme.of(context)
+                            .primaryTextTheme
+                            .headline6
+                            .color, //!depreciated
                       ),
                     ),
                     backgroundColor: Theme.of(context).primaryColor,
@@ -91,8 +93,10 @@ class _OrderButtonState extends State<OrderButton> {
     return _isLoading
         ? CircularProgressIndicator()
         : FlatButton(
+            //deprecated
             //checking if our cart is empty than disbaling the button else enabling it
-            onPressed: (widget.cartData.totalAmount <= 0 || _isLoading)
+            onPressed: (widget.cartData.totalAmount <= 0 ||
+                    _isLoading) //implement business logic in separate file not in UI file
                 ? null
                 : () async {
                     //

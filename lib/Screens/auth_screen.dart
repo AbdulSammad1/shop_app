@@ -1,4 +1,4 @@
-import 'dart:io';
+import 'dart:io'; //remive un used imoports
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 enum AuthMode { Signup, Login }
 
 class AuthScreen extends StatelessWidget {
-  static const routeName = '/auth';
+  static const routeName = '/auth'; //make variables private
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,8 @@ class AuthScreen extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color.fromRGBO(215, 117, 255, 1).withOpacity(0.5),
+                  Color.fromRGBO(215, 117, 255, 1).withOpacity(
+                      0.5), //make varibales for colors to use them in multiple places
                   Color.fromRGBO(255, 188, 117, 1).withOpacity(0.9),
                 ],
                 begin: Alignment.topLeft,
@@ -65,8 +66,10 @@ class AuthScreen extends StatelessWidget {
                       child: Text(
                         'MyShop',
                         style: TextStyle(
-                          color:
-                              Theme.of(context).accentTextTheme.headline6.color,
+                          color: Theme.of(context)
+                              .accentTextTheme
+                              .headline6
+                              .color, //deprecated use theme.of(context).colorScheme.primary
                           fontSize: 50,
                           fontFamily: 'Anton',
                           fontWeight: FontWeight.normal,
@@ -177,6 +180,7 @@ class _AuthCardState extends State<AuthCard>
         // Sign user up
         //using provider here to implement user sign up
 
+        //! Implement buisness logic in seprate file not in ui file
         await Provider.of<Auth>(context, listen: false)
             .signUp(_authData['email'], _authData['password']);
       }
@@ -310,6 +314,7 @@ class _AuthCardState extends State<AuthCard>
                   CircularProgressIndicator()
                 else
                   RaisedButton(
+                    //depreciated widgets
                     child:
                         Text(_authMode == AuthMode.Login ? 'LOGIN' : 'SIGN UP'),
                     onPressed: _submit,
@@ -322,6 +327,7 @@ class _AuthCardState extends State<AuthCard>
                     textColor: Theme.of(context).primaryTextTheme.button.color,
                   ),
                 FlatButton(
+                  //depreciated widgets
                   child: Text(
                       '${_authMode == AuthMode.Login ? 'SIGNUP' : 'LOGIN'} INSTEAD'),
                   onPressed: _switchAuthMode,

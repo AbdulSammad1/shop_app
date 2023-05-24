@@ -13,6 +13,10 @@ import './Screens/orders_screen.dart';
 import './Screens/edit_product_screen.dart';
 import './Screens/auth_screen.dart';
 
+// imports shoukd be in order of priority as mentioned by sir
+
+//create project specific to platforms (ios, android, web) only
+
 void main() {
   runApp(MyApp());
 }
@@ -47,7 +51,8 @@ class MyApp extends StatelessWidget {
           title: "Shop_App",
           theme: ThemeData(
             primarySwatch: Colors.blueGrey,
-            accentColor: Color.fromARGB(222, 220, 161, 60),
+            accentColor:
+                Color.fromARGB(222, 220, 161, 60), //deprecated use of function
             fontFamily: 'Lato',
           ),
           debugShowCheckedModeBanner: false,

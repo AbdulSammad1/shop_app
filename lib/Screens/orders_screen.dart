@@ -15,7 +15,7 @@ class OrdersScreen extends StatefulWidget {
 }
 
 class _OrdersScreenState extends State<OrdersScreen> {
-  var _isLoading = false;
+  var _isLoading = false; // no need to add _
 
   //Here we will fetch orders using Future Builder method which is a more elegant method
 
@@ -64,6 +64,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
               }
             }
           },
-        ));
+        )); //! add colon to make code more read able
   }
 }

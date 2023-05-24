@@ -168,7 +168,7 @@ class Products with ChangeNotifier {
     if (prodIndex >= 0) {
       //fetching products here with respect to user Id. it will fetch the products created by that user
       final url = Uri.parse(
-          'https://shop-app-8a080-default-rtdb.firebaseio.com/products/$id.json?auth=$authToken');
+          'https://shop-app-8a080-default-rtdb.firebaseio.com/products/$id.json?auth=$authToken'); // store it in seprate variable for re useablity
 
       //sending http request to edit data on firebase
       await http.patch(url,

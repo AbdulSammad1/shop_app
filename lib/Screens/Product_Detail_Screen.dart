@@ -63,7 +63,9 @@ class ProductDetailScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 21),
                   ),
                 ),
-                SizedBox(height: 700),
+                SizedBox(
+                    height:
+                        700), // prefer to use media query here for height instead of hardcoding
               ],
             ),
           )
