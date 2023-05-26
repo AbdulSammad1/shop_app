@@ -46,9 +46,9 @@ class MyApp extends StatelessWidget {
         builder: (ctx, auth, _) => MaterialApp(
           title: "Shop_App",
           theme: ThemeData(
-            primarySwatch: Colors.blueGrey,
-            accentColor: Color.fromARGB(222, 220, 161, 60),
-            fontFamily: 'Lato',
+            colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blueGrey)
+                .copyWith(secondary: Color.fromARGB(222, 220, 161, 60)),
+            // fontFamily: 'Lato',
           ),
           debugShowCheckedModeBanner: false,
           home: auth.isAuth
